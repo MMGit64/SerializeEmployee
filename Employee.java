@@ -7,8 +7,12 @@ public class Employee implements java.io.Serializable{
 	public String Occupation;
 	public int jobNumber;
 	
-	public void identityCheck(){
-		System.out.println("New Employee details include the following information:\n " + "Name:" + name + "\nAge:" 
-	+ age + "\nAddress:" + address + "\nOccupation:" + Occupation + "\nJob Number:" + jobNumber);
+	public Employee(String name, int age, String address, String Occupation, int JobNumber){
+		
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.Occupation = Occupation;
+		this.jobNumber = JobNumber;
 	}
 }
