@@ -6,7 +6,7 @@ import java.util.*;
 
 public class SerialDemo{
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		
 		Employee e = new Employee();
 		e.name = "Jacob Peters";
@@ -15,18 +15,12 @@ public class SerialDemo{
 		e.Occupation = "Risk Analyst";
 		e.jobNumber = 23984;
 		
-		try {
-			
-			FileOutputStream fos = new FileOutputStream("/tmp/employee.ser");
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(e);
-			oos.close();
-			fos.close();
-			System.out.printf("Serialized data is the following: /tmp/employee.ser");
-		}
-		catch (IOException e1){
-			e1.printStackTrace();
-		}
+
+		FileOutputStream fos = new FileOutputStream("employee.ser");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		oos.writeObject(e);
+		oos.flush();
+		System.out.printf("Serialized data is the following:employee.ser");
 		
 	}
 }
