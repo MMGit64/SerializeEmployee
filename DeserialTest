@@ -1,0 +1,12 @@
+import java.util.io.*;
+
+public class DeserialTest{
+  public static void main(String[] args){
+      
+      ObjectInputStream ois = new ObjectInputStream (new FileInputStream("employee.ser"));
+      Employee e = (Employee)ois.readObject();
+      System.out.println(e.name + "" + e.address + "" + e.jobNumber);
+      
+      ois.close();
+  }
+}
